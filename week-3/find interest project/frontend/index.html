@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>find interest</title>
+</head>
+<body>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required><br><br>
+
+        <label for="rate">Rate:</label>
+        <input type="number" id="rate" name="rate" required><br><br>
+
+        <label for="time">Time:</label>
+        <input type="number" id="time" name="time" required><br><br>
+
+        <button onclick="findInterest()">Calculate Interest</button>
+
+        <div id="ans">hello</div>
+    <script>
+        async function findInterest(){
+            let amount = document.getElementById("amount").value
+            let rate = document.getElementById("rate").value
+            let time = document.getElementById("time").value
+
+            fetch("http://localhost:3000/interest?amount=" + amount + "&rate=" + rate + "&time=" + time)
+            .then(function (response) {
+                response.json()
+                .then(function (res) {
+                    document.getElementById("ans").innerHTML = `your interest is ${res.interest} ans total amount is ${res.total}`;
+                })
+            })
+        }
+    </script>
+</body>
+</html>

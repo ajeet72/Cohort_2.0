@@ -1,0 +1,16 @@
+<html>
+    <script>
+        function calculateSum(){
+            const a = document.getElementById("firstNumber").value;
+            const b = document.getElementById("secondNumber").value;
+            const element = document.getElementById("answer")
+            element.innerHTML = parseInt(a) + parseInt(b);
+        }
+    </script>
+    <body>
+        <input id="firstNumber" type="number" placeholder="first number"><br>
+        <input id="secondNumber" type="number" placeholder="second number"><br>
+        <button onclick="calculateSum()">calculate</button>
+        <div id="answer"></div>
+    </body>
+</html>

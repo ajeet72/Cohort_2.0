@@ -1,0 +1,33 @@
+<html>
+    <script>
+        function addtodo(){
+            const title = document.getElementById('title').value
+            const description = document.getElementById('description').value
+            let pretask = document.getElementById("container").innerHTML;
+            // document.getElementById('container').appendChild(outerDiv)
+
+            document.getElementById("container").innerHTML = pretask + `
+            <div>
+            <div>${title}</div>
+            <div>${description}</div>
+            <button>mark as read</button>
+            </div>
+            `
+
+        }
+    </script>
+    <div>
+        <input type="text" id="title" placeholder="title"> </input>
+        <br></br>
+        <input type="text" id="description" placeholder="title"> </input>
+        <br></br>
+        <button onclick="addtodo()">add todo</button>
+        <div id="container"></div>
+
+        <!-- <div>
+            <div>title</div>
+            <div>description</div>
+            <button>mark as read</button>
+        </div> -->
+    </div>
+</html>
