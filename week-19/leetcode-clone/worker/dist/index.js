@@ -18,7 +18,7 @@ function processSubmission(submission) {
         console.log(`Code: ${code}`);
         console.log(`Language: ${language}`);
         // Here you would add your actual processing logic
-        // Simulate processing delay
+        // here i added the artificial delay
         yield new Promise(resolve => setTimeout(resolve, 1000));
         console.log(`Finished processing submission for problemId ${problemId}.`);
     });
