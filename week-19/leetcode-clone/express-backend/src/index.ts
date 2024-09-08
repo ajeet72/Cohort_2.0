@@ -14,7 +14,7 @@ app.post("/submit", async (req, res) => {
 
     try {
         await client.lPush("problems", JSON.stringify({ code, language, problemId }));
-        // Store in the database and do what ever you want
+        // Store in the the database
         res.status(200).send("Submission received and stored.");
     } catch (error) {
         console.error("Redis error:", error);
